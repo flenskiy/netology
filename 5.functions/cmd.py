@@ -97,4 +97,4 @@ def add_shelf(directories):
 
 
 def close_program():
-    exit(0)
+    raise SystemExit(0)
