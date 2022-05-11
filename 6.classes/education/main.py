@@ -3,7 +3,6 @@ from classes import Student, Reviewer, Lecturer
 
 def average_rate(persons, course):
     all_rates = []
-
     for person in persons:
         if course in person.grades.keys():
             all_rates += person.grades[course]
@@ -69,24 +68,29 @@ def main():
     print(reviewer2)
     print()
 
-    print(student1 > student2)
-    print(student1 < student2)
     print(student1 == student2)
     print(student1 != student2)
+    print(student1 <= student2)
+    print(student1 >= student2)
+    print(student1 > student2)
+    print(student1 < student2)
     print()
 
-    print(lecturer1 > lecturer2)
-    print(lecturer1 < lecturer2)
     print(lecturer1 == lecturer2)
     print(lecturer1 != lecturer2)
+    print(lecturer1 <= lecturer2)
+    print(lecturer1 >= lecturer2)
+    print(lecturer1 > lecturer2)
+    print(lecturer1 < lecturer2)
     print()
+
+    print(average_rate(Student.students, 'Python'))
+    print(average_rate(Student.students, 'C++'))
+    print(average_rate(Student.students, 'Ruby'))
 
     print(average_rate(Lecturer.lecturers, 'Python'))
     print(average_rate(Lecturer.lecturers, 'C++'))
     print(average_rate(Lecturer.lecturers, 'Ruby'))
-    print(average_rate(Student.students, 'Python'))
-    print(average_rate(Student.students, 'C++'))
-    print(average_rate(Student.students, 'Ruby'))
 
 
 if __name__ == '__main__':

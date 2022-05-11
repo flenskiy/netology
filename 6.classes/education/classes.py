@@ -23,7 +23,13 @@ class Student:
     def __eq__(self, other):
         return self.__average_rate() == other
 
+    def __ne__(self, other):
+        return self.__average_rate() != other
+
     def __ge__(self, other):
+        return self.__average_rate() <= other
+
+    def __le__(self, other):
         return self.__average_rate() >= other
 
     def __gt__(self, other):
@@ -33,8 +39,7 @@ class Student:
         return self.__average_rate() < other
 
     def rate_hw(self, lecturer, course, grade):
-        if isinstance(lecturer,
-                      Lecturer) and course in self.courses_in_progress and course in lecturer.courses_attached:
+        if isinstance(lecturer, Lecturer) and course in self.courses_in_progress and course in lecturer.courses_attached:
             if course in lecturer.grades:
                 lecturer.grades[course] += [grade]
             else:
@@ -93,7 +98,13 @@ class Lecturer(Mentor):
     def __eq__(self, other):
         return self.__average_rate() == other
 
+    def __ne__(self, other):
+        return self.__average_rate() != other
+
     def __ge__(self, other):
+        return self.__average_rate() <= other
+
+    def __le__(self, other):
         return self.__average_rate() >= other
 
     def __gt__(self, other):
